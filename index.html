@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <form id="calForm" class="calculatorForm">
+            <div class="inputDiv">
+                <input type="text" id="cal_screen" class="input-cal-screen" readonly>
+            </div>
+        
+        <div class="cal" id="calculator">
+            <div class="clear">
+                <button class="delete clr btns">delete</button>
+                <button class="clearAll clr">AC</button>
+            </div>
+            <div class="number">
+                <button class="btns numbers">1</button>
+                <button class="btns numbers">2</button>
+                <button class="btns numbers">3</button>
+                <button class="btns numbers">4</button>
+                <button class="btns numbers">5</button>
+                <button class="btns numbers">6</button>
+                <button class="btns numbers">7</button>
+                <button class="btns numbers">8</button>
+                <button class="btns numbers">9</button>
+                <button class="btns numbers">0</button>
+            </div>
+            <div class="operator">
+                <button class="operators btns">+</button>
+                <button class="operators btns">-</button>
+                <button class="operators btns">*</button>
+                <button class="operators btns">/</button>
+            </div>
+            <div class="calculate">
+                <button class="total btns" id="final_answer" >=</button>
+            </div>
+        </div>
+    </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
