@@ -44,6 +44,5 @@ calculatorForm.addEventListener("submit", function (event) {
 // total function
 function finalAnswer() {
   // with using the eval function
-//   console.log(eval(inputScreen.value));
   inputScreen.value = eval(inputScreen.value)
 }
