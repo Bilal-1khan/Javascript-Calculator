@@ -19,20 +19,16 @@ function calculator() {
   calculatorNumbers.forEach((btns) => {
     btns.addEventListener("click", function (event) {
       const btnsValues = Number(event.currentTarget.textContent);
-      numbersValue = btnsValues
+      numbersValue = btnsValues;
       inputScreen.value += numbersValue;
-    //   finalAnswer(btnsValues);
     });
   });
 
   calculatorOperators.forEach((opBtns) => {
     opBtns.addEventListener("click", function (event) {
       const targetOpBtns = event.currentTarget.textContent;
-      operators = targetOpBtns
+      operators = targetOpBtns;
       inputScreen.value += operators;
-    //   finalAnswer(targetOpBtns);
-    // console.log(operators);
-    
     });
   });
   deleteOneNumber.addEventListener("click", function () {
@@ -51,26 +47,39 @@ calculator();
 
 // total function
 function finalAnswer() {
-  // with using the eval function
-  console.log(eval(inputScreen.value));
-  inputScreen.value = eval(inputScreen.value)
+  const input = inputScreen.value;
+  const number = input.split(/[/\-+*%]/).map((nums) => parseFloat(nums));
+  const oper = input.search(/[*/\-+%]/);
+  const operChar = inputScreen.value.charAt(oper);
+  let num1 = number[0];
+  let num2 = number[1];
+  let result;
 
-  // if (inputScreen.value.includes("*")) {
-  //   console.log(numbersValue * numbersValue);
-    
-    
-  // }
+  if (number.length < 2 || !operChar) {
+    inputScreen.value = "invalid expression";
+    return;
+  }
 
-  // if (operators === "*") {
-  //   inputScreen.value = Number(numbersValue)
-  // }
-  // if (operators === "/") {
-  //   inputScreen.value = Number(numbersValue / numbersValue)
-  // }
-  // if (operators === "+") {
-  //   inputScreen.value = Number(numbersValue + numbersValue)
-  // }
-  // if (operators === "-") {
-  //   inputScreen.value = Number(numbersValue - numbersValue)
-  // }
+  switch (operChar) {
+    case "*":
+      result = num1 * num2;
+      break;
+    case "+":
+      result = num1 + num2;
+      break;
+    case "-":
+      result = num1 - num2;
+      break;
+    case "/":
+      result = num1 / num2;
+      break;
+    case "%":
+      result = num1 % num2;
+      break;
+
+    default:
+      inputScreen.value = "invalid operator";
+      return;
+  }
+  inputScreen.value = result;
 }
