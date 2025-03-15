@@ -10,7 +10,7 @@
     <div class="container">
         <form id="calForm" class="calculatorForm">
             <div class="inputDiv">
-                <input type="text" id="cal_screen" class="input-cal-screen" readonly>
+                <input type="text" id="cal_screen" class="input-cal-screen" value="0" readonly>
             </div>
         
         <div class="cal" id="calculator">
@@ -35,6 +35,8 @@
                 <button class="operators btns">-</button>
                 <button class="operators btns">*</button>
                 <button class="operators btns">/</button>
+                <button class="operators btns">%</button>
+                <button class="operators btns">.</button>
             </div>
             <div class="calculate">
                 <button class="total btns" id="final_answer" onclick="finalAnswer()">=</button>
@@ -42,7 +44,7 @@
         </div>
     </form>
     </div>
-    <!-- <script src="app.js"></script> -->
-    <script src="eval.js"></script>
+    <script src="app.js"></script>
+    <!-- <script src="eval.js"></script> -->
 </body>
 </html>
